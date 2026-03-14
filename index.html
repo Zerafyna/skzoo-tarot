@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stray Kids SKZOO Tarot</title>
+  <style>
+    :root {
+      --bg: #fffaf6;
+      --paper: #ffffff;
+      --ink: #2d2233;
+      --muted: #6b5f73;
+      --accent: #b26cff;
+      --accent-2: #ffd36e;
+      --line: #eadff1;
+      --shadow: 0 10px 30px rgba(45, 34, 51, 0.08);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(178, 108, 255, 0.1), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 211, 110, 0.18), transparent 28%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 72px 0 36px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(178, 108, 255, 0.12);
+      color: #7a39c4;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 14px 0 14px;
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1.05;
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .quick-links a {
+      text-decoration: none;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 11px 16px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      font-weight: 600;
+    }
+
+    main section {
+      padding: 26px 0 8px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card .number {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #8d63b8;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .card .skzoo {
+      font-weight: 700;
+      color: #7a39c4;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .energy {
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px dashed var(--line);
+      font-size: 0.92rem;
+      color: #5b4d66;
+    }
+
+    .energy strong {
+      color: var(--ink);
+    }
+
+    footer {
+      padding: 42px 0 68px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      header { padding-top: 48px; }
+      .hero-card { padding: 20px; }
+      .section-heading { align-items: start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div class="hero-card">
+        <span class="badge">Fanmade Tarot Project</span>
+        <h1>Stray Kids SKZOO Tarot</h1>
+        <p class="lead">
+          A custom tarot deck inspired by the Rider–Waite Major Arcana, reimagined through SKZOO characters.
+          The card meanings stay compatible with traditional tarot, while the visuals bring in the heart, charm,
+          and symbolism of Stray Kids' SKZOO world.
+        </p>
+        <div class="quick-links">
+          <a href="#major-arcana">Major Arcana</a>
+          <a href="#special-cards">Special Cards</a>
+          <a href="#about">About the Deck</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About the Deck</h2>
+          <p>
+            This website is a simple home for the current card assignments and guidebook text. You can expand it later
+            with full artwork, reversed meanings, a printable PDF guide, or a gallery view for each card.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="major-arcana">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Major Arcana</h2>
+          <p>Current concept list for the Rider–Waite-inspired Major Arcana cards in the SKZOO Tarot deck.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="number">0</div><h3>The Fool</h3><div class="skzoo">BbokAri</div><p>A leap of faith, new beginnings, and trusting the journey with an open heart.</p><div class="energy"><strong>Energy:</strong> New beginnings, optimism, curiosity, trust in the journey, embracing adventure.</div></article>
+          <article class="card"><div class="number">I</div><h3>The Magician</h3><div class="skzoo">Wolf Chan</div><p>Using your talents with focus and intention to bring an idea into reality.</p><div class="energy"><strong>Energy:</strong> Inspiration, creativity, innovation, collaboration, bringing ideas into reality.</div></article>
+          <article class="card"><div class="number">II</div><h3>The High Priestess</h3><div class="skzoo">Jiniret</div><p>Listening to intuition, trusting inner knowledge, and pausing before acting.</p><div class="energy"><strong>Energy:</strong> Intuition, inner wisdom, reflection, emotional awareness, hidden knowledge.</div></article>
+          <article class="card"><div class="number">III</div><h3>The Empress</h3><div class="skzoo">Han Quokka</div><p>Nurturing growth, creativity, comfort, and the things that matter most.</p><div class="energy"><strong>Energy:</strong> Creativity, nurturing, abundance, emotional warmth, growth.</div></article>
+          <article class="card"><div class="number">IV</div><h3>The Emperor</h3><div class="skzoo">Dwaekki</div><p>Structure, leadership, protection, and building strong foundations.</p><div class="energy"><strong>Energy:</strong> Leadership, stability, discipline, responsibility, strong foundations.</div></article>
+          <article class="card"><div class="number">V</div><h3>The Hierophant</h3><div class="skzoo">PuppyM</div><p>Learning from tradition, trusted guidance, and shared values.</p><div class="energy"><strong>Energy:</strong> Wisdom, tradition, learning, mentorship, shared values.</div></article>
+          <article class="card"><div class="number">VI</div><h3>The Lovers</h3><div class="skzoo">Han Quokka + Leebit</div><p>Meaningful bonds, heartfelt choices, and emotional alignment.</p><div class="energy"><strong>Energy:</strong> Connection, harmony, partnership, meaningful choices, emotional alignment.</div></article>
+          <article class="card"><div class="number">VII</div><h3>The Chariot</h3><div class="skzoo">Dwaekki</div><p>Momentum, confidence, and determined forward motion through challenge.</p><div class="energy"><strong>Energy:</strong> Determination, ambition, focus, perseverance, personal victory.</div></article>
+          <article class="card"><div class="number">VIII</div><h3>Strength</h3><div class="skzoo">BbokAri calming Dwaekki</div><p>Gentle courage, emotional control, and compassion that steadies intensity.</p><div class="energy"><strong>Energy:</strong> Inner strength, compassion, patience, resilience, emotional balance.</div></article>
+          <article class="card"><div class="number">IX</div><h3>The Hermit</h3><div class="skzoo">FoxI.Ny</div><p>Quiet reflection, inner guidance, and wisdom found in solitude.</p><div class="energy"><strong>Energy:</strong> Introspection, wisdom, reflection, personal insight, guidance within.</div></article>
+          <article class="card"><div class="number">X</div><h3>Wheel of Fortune</h3><div class="skzoo">All SKZOO</div><p>Cycles turning, fate shifting, and life opening to change and opportunity.</p><div class="energy"><strong>Energy:</strong> Change, destiny, cycles, opportunity, turning points.</div></article>
+          <article class="card"><div class="number">XI</div><h3>Justice</h3><div class="skzoo">Leebit</div><p>Truth, fairness, accountability, and choices made with clarity.</p><div class="energy"><strong>Energy:</strong> Fairness, truth, balance, accountability, clear decisions.</div></article>
+          <article class="card"><div class="number">XII</div><h3>The Hanged Man</h3><div class="skzoo">Wolf Chan</div><p>A pause for perspective, surrender, and insight through stillness.</p><div class="energy"><strong>Energy:</strong> Perspective, surrender, patience, reflection, letting go.</div></article>
+          <article class="card"><div class="number">XIII</div><h3>Death</h3><div class="skzoo">Jiniret</div><p>Transformation, endings, release, and the beginning that follows change.</p><div class="energy"><strong>Energy:</strong> Transformation, endings, renewal, release, powerful change.</div></article>
+          <article class="card"><div class="number">XIV</div><h3>Temperance</h3><div class="skzoo">FoxI.Ny + PuppyM</div><p>Balance, patience, and the peaceful blending of different strengths.</p><div class="energy"><strong>Energy:</strong> Balance, moderation, cooperation, patience, harmony.</div></article>
+          <article class="card"><div class="number">XV</div><h3>The Devil</h3><div class="skzoo">Han Quokka</div><p>Recognizing attachment, temptation, or patterns that keep you stuck.</p><div class="energy"><strong>Energy:</strong> Awareness, breaking habits, self-reflection, reclaiming personal power.</div></article>
+          <article class="card"><div class="number">XVI</div><h3>The Tower</h3><div class="skzoo">Multiple SKZOO</div><p>Sudden change, truth revealed, and rebuilding after disruption.</p><div class="energy"><strong>Energy:</strong> Sudden change, awakening, disruption, revelation, rebuilding.</div></article>
+          <article class="card"><div class="number">XVII</div><h3>The Star</h3><div class="skzoo">Stay SKZOO</div><p>Hope, healing, inspiration, and a gentle return of faith.</p><div class="energy"><strong>Energy:</strong> Hope, healing, inspiration, renewal, guidance.</div></article>
+          <article class="card"><div class="number">XVIII</div><h3>The Moon</h3><div class="skzoo">FoxI.Ny</div><p>Uncertainty, intuition, dreams, and trusting what you feel beneath the surface.</p><div class="energy"><strong>Energy:</strong> Intuition, mystery, emotional awareness, uncertainty, inner guidance.</div></article>
+          <article class="card"><div class="number">XIX</div><h3>The Sun</h3><div class="skzoo">BbokAri</div><p>Joy, warmth, success, and the clarity that follows darkness.</p><div class="energy"><strong>Energy:</strong> Joy, success, positivity, vitality, clarity.</div></article>
+          <article class="card"><div class="number">XX</div><h3>Judgement</h3><div class="skzoo">All SKZOO</div><p>Awakening, reflection, life review, and answering a deeper call.</p><div class="energy"><strong>Energy:</strong> Awakening, reflection, transformation, renewal, self-realization.</div></article>
+          <article class="card"><div class="number">XXI</div><h3>The World</h3><div class="skzoo">All SKZOO</div><p>Completion, fulfillment, and celebrating how far your journey has taken you.</p><div class="energy"><strong>Energy:</strong> Completion, fulfillment, harmony, success, wholeness.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="special-cards">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Special Cards</h2>
+          <p>Extra concept cards based on Stray Kids units.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="number">Special</div><h3>3RACHA — The Creator</h3><div class="skzoo">Production / vision / invention</div><p>A card of bold ideas, creative confidence, and turning imagination into something real.</p><div class="energy"><strong>Energy:</strong> Inspiration, creativity, innovation, collaboration, bringing ideas into reality.</div></article>
+          <article class="card"><div class="number">Special</div><h3>DANCERACHA — The Performer</h3><div class="skzoo">Movement / charisma / expression</div><p>A card of passion in motion, stage presence, confidence, and artistic self-expression.</p><div class="energy"><strong>Energy:</strong> Confidence, performance, self-expression, passion, creative movement.</div></article>
+          <article class="card"><div class="number">Special</div><h3>VOCALRACHA — The Voice</h3><div class="skzoo">Emotion / honesty / communication</div><p>A card of truth, connection, and expressing your heart clearly and sincerely.</p><div class="energy"><strong>Energy:</strong> Communication, authenticity, emotional expression, connection, truth.</div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Stray Kids SKZOO Tarot</strong>
+      <p class="note">Fanmade concept site for a custom tarot deck inspired by Rider–Waite symbolism and SKZOO character assignments.</p>
+    </div>
+  </footer>
+</body>
+</html>
