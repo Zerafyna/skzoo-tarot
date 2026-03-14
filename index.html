@@ -1,283 +1,697 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stray Kids SKZOO Tarot</title>
-  <style>
-    :root {
-      --bg: #fffaf6;
-      --paper: #ffffff;
-      --ink: #2d2233;
-      --muted: #6b5f73;
-      --accent: #b26cff;
-      --accent-2: #ffd36e;
-      --line: #eadff1;
-      --shadow: 0 10px 30px rgba(45, 34, 51, 0.08);
-      --radius: 20px;
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(178, 108, 255, 0.1), transparent 30%),
-        radial-gradient(circle at top right, rgba(255, 211, 110, 0.18), transparent 28%),
-        var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; }
-
-    .container {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    header {
-      padding: 72px 0 36px;
-    }
-
-    .hero {
-      display: grid;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(178, 108, 255, 0.12);
-      color: #7a39c4;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-
-    h1 {
-      margin: 14px 0 14px;
-      font-size: clamp(2.2rem, 5vw, 4.5rem);
-      line-height: 1.05;
-    }
-
-    .lead {
-      max-width: 760px;
-      font-size: 1.08rem;
-      color: var(--muted);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(255,255,255,0.6);
-      backdrop-filter: blur(8px);
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .quick-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .quick-links a {
-      text-decoration: none;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 11px 16px;
-      border-radius: 999px;
-      box-shadow: var(--shadow);
-      font-weight: 600;
-    }
-
-    main section {
-      padding: 26px 0 8px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(1.5rem, 3vw, 2.4rem);
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .card .number {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #8d63b8;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .card h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      line-height: 1.25;
-    }
-
-    .card .skzoo {
-      font-weight: 700;
-      color: #7a39c4;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .energy {
-      margin-top: auto;
-      padding-top: 6px;
-      border-top: 1px dashed var(--line);
-      font-size: 0.92rem;
-      color: #5b4d66;
-    }
-
-    .energy strong {
-      color: var(--ink);
-    }
-
-    footer {
-      padding: 42px 0 68px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .note {
-      margin-top: 14px;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 720px) {
-      header { padding-top: 48px; }
-      .hero-card { padding: 20px; }
-      .section-heading { align-items: start; flex-direction: column; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header>
-    <div class="container hero">
-      <div class="hero-card">
-        <span class="badge">Fanmade Tarot Project</span>
-        <h1>Stray Kids SKZOO Tarot</h1>
-        <p class="lead">
-          A custom tarot deck inspired by the Rider–Waite Major Arcana, reimagined through SKZOO characters.
-          The card meanings stay compatible with traditional tarot, while the visuals bring in the heart, charm,
-          and symbolism of Stray Kids' SKZOO world.
-        </p>
-        <div class="quick-links">
-          <a href="#major-arcana">Major Arcana</a>
-          <a href="#special-cards">Special Cards</a>
-          <a href="#about">About the Deck</a>
+  <div class="page-shell">
+    <header>
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-layout">
+            <div class="hero-text">
+              <span class="badge">✦ Fanmade SKZOO Tarot Project</span>
+              <h1>Stray Kids SKZOO Tarot</h1>
+              <p class="lead">
+                This tarot deck is inspired by the classic Major Arcana of the Rider–Waite Tarot and reimagined through
+                the world of SKZOO. Each card represents a symbolic archetype illustrated through the SKZOO characters,
+                reflecting themes of growth, creativity, self-discovery, and connection.
+              </p>
+              <p class="lead">
+                While the imagery draws inspiration from the personalities and symbolism of Stray Kids’ SKZOO universe,
+                the card meanings remain compatible with traditional tarot interpretations.
+              </p>
+              <div class="quick-links">
+                <a href="#card-guide">Find a Card</a>
+                <a href="#how-to-read">How to Read</a>
+                <a href="#major-arcana">Major Arcana Meanings</a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img src="images/card-back.png" alt="SKZOO Tarot Card Back">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section id="about">
+    <main>
+      <section id="card-guide">
+        <div class="container">
+         <div class="section-heading">
+  <h2>Find a Tarot Card</h2>
+  <p>
+    Use these quick links to explore the cards of the SKZOO Tarot deck. Select any card to jump straight to its meaning
+    and discover the symbolism, guidance, and energy it may bring to a reading.
+  </p>
+</div>
+          <div class="jump-card">
+            <div class="jump-links">
+              <a href="#fool">0 — The Fool</a>
+              <a href="#magician">I — The Magician</a>
+              <a href="#high-priestess">II — The High Priestess</a>
+              <a href="#empress">III — The Empress</a>
+              <a href="#emperor">IV — The Emperor</a>
+              <a href="#hierophant">V — The Hierophant</a>
+              <a href="#lovers">VI — The Lovers</a>
+              <a href="#chariot">VII — The Chariot</a>
+              <a href="#strength">VIII — Strength</a>
+              <a href="#hermit">IX — The Hermit</a>
+              <a href="#wheel-of-fortune">X — Wheel of Fortune</a>
+              <a href="#justice">XI — Justice</a>
+              <a href="#hanged-man">XII — The Hanged Man</a>
+              <a href="#death">XIII — Death</a>
+              <a href="#temperance">XIV — Temperance</a>
+              <a href="#devil">XV — The Devil</a>
+              <a href="#tower">XVI — The Tower</a>
+              <a href="#star">XVII — The Star</a>
+              <a href="#moon">XVIII — The Moon</a>
+              <a href="#sun">XIX — The Sun</a>
+              <a href="#judgement">XX — Judgement</a>
+              <a href="#world">XXI — The World</a>
+              <!-- Special Cards -->
+              <a href="#creator">3RACHA — The Creator</a>
+              <a href="#performer">DANCERACHA — The Performer</a>
+              <a href="#voice">VOCALRACHA — The Voice</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section id="how-to-read">
       <div class="container">
         <div class="section-heading">
-          <h2>About the Deck</h2>
-          <p>
-            This website is a simple home for the current card assignments and guidebook text. You can expand it later
-            with full artwork, reversed meanings, a printable PDF guide, or a gallery view for each card.
-          </p>
+          <h2>How to Use Tarot Cards</h2>
+          <p>These simple spreads are beginner-friendly and work well for daily guidance, reflection, or checking the
+            energy around a situation.</p>
+        </div>
+        <div class="spread-grid">
+          <article class="spread-card">
+            <h3>1-Card Spread — Daily Guidance</h3>
+            <p>Shuffle your deck while focusing on a question like, “What energy should I pay attention to today?” or
+              “What guidance do I need right now?” Pull one card and reflect on its message, mood, and lesson.</p>
+            <ol>
+              <li>Ask one clear question.</li>
+              <li>Pull a single card.</li>
+              <li>Read the meaning and notice what stands out to you personally.</li>
+            </ol>
+          </article>
+          <article class="spread-card">
+            <h3>2-Card Spread — Situation + Advice</h3>
+            <p>A two-card spread is useful when you want clarity around something specific. The first card shows the
+              current energy, challenge, or situation, while the second card shows guidance, support, or what to focus
+              on next.</p>
+            <ol>
+              <li>Card 1: What is happening now?</li>
+              <li>Card 2: What guidance will help me most?</li>
+              <li>Read them together as a conversation between present energy and next steps.</li>
+            </ol>
+          </article>
+          <article class="spread-card">
+            <h3>3-Card Spread — Past, Present, Future</h3>
+            <p>This is one of the most classic tarot spreads and is great for beginners. It helps you see how past
+              influences connect to your present situation and where the energy may be heading next.</p>
+            <ol>
+              <li>Card 1: Past — what shaped this situation?</li>
+              <li>Card 2: Present — what is the energy now?</li>
+              <li>Card 3: Future — where is this leading if things continue?</li>
+            </ol>
+          </article>
         </div>
       </div>
-    </section>
+    </section> -->
+      <section id="how-to-read">
+        <div class="container">
+          <div class="section-heading">
+            <h2>How to Use Tarot Cards ✦</h2>
+            <p>These simple spreads are beginner-friendly and work well for daily guidance, reflection, or checking the
+              energy around a situation.</p>
+          </div>
 
-    <section id="major-arcana">
+          <div class="reading-intro">
+            <p>Before any reading, take a moment to slow down and focus on your question or intention. Shuffle the cards
+              in a way that feels natural to you while thinking about what you want guidance on. When you feel ready,
+              draw the number of cards needed for your chosen spread and read them with both the guide meanings and your
+              own intuition in mind.</p>
+          </div>
+
+          <div class="spread-grid">
+            <article class="spread-card">
+              <h3>1-Card Spread — Daily Guidance</h3>
+              <p>A one-card spread is best when you want a simple message or energy check. It is perfect for daily
+                pulls, quick reflection, or asking what you should focus on right now.</p>
+              <ol>
+                <li>Pull 1 card.</li>
+                <li>Read it as the main energy, lesson, or guidance for the moment.</li>
+                <li>Reflect on how its message applies to your day or situation.</li>
+              </ol>
+            </article>
+
+            <article class="spread-card">
+              <h3>2-Card Spread — Situation + Advice</h3>
+              <p>A two-card spread helps you understand both the current energy and the guidance that supports you. It
+                is useful when you want a little more clarity around a specific question.</p>
+              <ol>
+                <li>Card 1: What is happening now?</li>
+                <li>Card 2: What guidance or support will help most?</li>
+                <li>Read the pair together as insight plus direction.</li>
+              </ol>
+            </article>
+
+            <article class="spread-card">
+              <h3>3-Card Spread — Past, Present, Future</h3>
+              <p>A three-card spread gives a broader view of the flow of energy through a situation. It is one of the
+                most classic tarot spreads and is especially helpful for beginners.</p>
+              <ol>
+                <li>Card 1: Past — what shaped this situation?</li>
+                <li>Card 2: Present — what is the energy now?</li>
+                <li>Card 3: Future — where is this leading?</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="major-arcana">
+        <div class="container">
+          <!-- <div class="section-heading">
+          <h2>Major Arcana Meanings</h2>
+          <p>Extensive guidebook-style descriptions for the SKZOO Tarot Major Arcana, written to feel supportive,
+            reflective, and beginner-friendly.</p>
+        </div> -->
+          <div class="section-heading">
+            <h2>Major Arcana Meanings</h2>
+            <p>
+              The Major Arcana cards represent the most significant themes and lessons that appear throughout a person’s
+              journey.
+              In tarot, these cards often reflect important moments of growth, change, and self-discovery. Each card
+              symbolizes
+              a different archetype or stage of experience, offering guidance about the energy surrounding a situation
+              and the
+              deeper patterns that may be unfolding.
+            </p>
+            <p>
+              In the SKZOO Tarot, the traditional meanings of the Rider–Waite Major Arcana are reimagined through the
+              personalities
+              and symbolism of the SKZOO characters. While the artwork brings a playful and unique visual style, the
+              interpretations
+              remain compatible with classic tarot reading methods.
+            </p>
+            <p>
+              Below you will find guidebook-style descriptions for each card, written to be supportive, reflective, and
+              beginner-friendly.
+              Whether you are new to tarot or already familiar with the cards, these meanings can help you understand
+              the message,
+              mood, and guidance each card may offer during a reading.
+            </p>
+          </div>
+          <div class="meanings-wrap">
+            <article class="meaning-section" id="fool">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">0</span> — The Fool
+                  <span class="skzoo">BbokAri</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Fool represents new beginnings, curiosity, and the
+                courage
+                to step into the unknown. Like BbokAri’s bright and cheerful spirit, this card reminds us that every
+                journey begins with a single step taken with hope and openness. It encourages you to trust your
+                instincts
+                and allow yourself to explore new opportunities without being held back by fear or overthinking. When
+                The
+                Fool appears, it may suggest that you are at the start of a new adventure, path, or chapter in your
+                life.
+                Embrace the excitement of discovery and remember that growth often begins when you are willing to take a
+                leap of faith.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>New beginnings, curiosity, optimism,
+                trusting the journey, embracing adventure.</p>
+            </article>
+
+            <article class="meaning-section" id="magician">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">I</span> — The Magician
+                  <span class="skzoo">Wolf Chan</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Magician represents the ability to turn ideas into
+                reality
+                through skill, focus, and intention. Like Wolf Chan’s dependable leadership and creative energy, this
+                card
+                reminds you that you already possess the tools needed to make something meaningful happen. It encourages
+                you to believe in your talents and use them with confidence and purpose. When The Magician appears, it
+                often signals a moment where your creativity and determination can bring a vision to life. Your actions,
+                ideas, and efforts have the power to shape your future.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Creativity, skill, manifestation,
+                confidence, turning ideas into reality.</p>
+            </article>
+
+            <article class="meaning-section" id="high-priestess">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">II</span> — The High Priestess
+                  <span class="skzoo">Jiniret</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The High Priestess represents intuition, mystery, and deep
+                inner understanding. Like Jiniret’s calm and observant presence, this card invites you to slow down and
+                listen to the quiet wisdom within yourself. It reminds you that not all answers come from
+                logic—sometimes
+                they arise from reflection, emotion, and instinct. When this card appears, it may suggest that something
+                beneath the surface is waiting to be understood. Trust your intuition and allow yourself time to reflect
+                before making important decisions.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Intuition, inner wisdom, mystery,
+                reflection, emotional awareness.</p>
+            </article>
+
+            <article class="meaning-section" id="empress">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">III</span> — The Empress
+                  <span class="skzoo">Han Quokka</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Empress represents warmth, creativity, and nurturing
+                energy. Much like Han Quokka’s comforting and joyful personality, this card reflects the power of
+                kindness, creativity, and emotional connection. It encourages you to nurture your ideas, relationships,
+                and environment so they can grow and flourish. When The Empress appears, it often suggests a period of
+                abundance, creativity, or emotional fulfillment. By showing care for yourself and others, you create the
+                conditions for beauty and growth to thrive.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Creativity, nurturing, comfort, growth,
+                emotional warmth.</p>
+            </article>
+
+            <article class="meaning-section" id="emperor">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">IV</span> — The Emperor
+                  <span class="skzoo">Dwaekki</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Emperor represents structure, leadership, and the
+                strength
+                to build something lasting. Dwaekki’s confident and determined energy reflects the importance of taking
+                responsibility and creating stability in your life. This card encourages you to take charge of
+                situations
+                where clear direction and organization are needed. When The Emperor appears, it may suggest stepping
+                into
+                a leadership role or establishing stronger boundaries. By creating structure and discipline, you build a
+                solid foundation for future success.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Leadership, stability, authority,
+                structure, strong foundations.</p>
+            </article>
+
+            <article class="meaning-section" id="hierophant">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">V</span> — The Hierophant
+                  <span class="skzoo">PuppyM</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Hierophant represents tradition, wisdom, and learning
+                through shared knowledge. PuppyM’s loyal and thoughtful nature reflects the value of guidance,
+                mentorship,
+                and community. This card encourages you to seek wisdom from trusted sources or established traditions.
+                When The Hierophant appears, it may suggest that learning from others can help you grow and better
+                understand your path. Sometimes the guidance you need comes from teachers, mentors, or communities that
+                share meaningful values.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Tradition, learning, mentorship, shared
+                wisdom, guidance.</p>
+            </article>
+
+            <article class="meaning-section" id="lovers">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">VI</span> — The Lovers
+                  <span class="skzoo">Han Quokka & Leebit</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Lovers represent connection, harmony, and meaningful
+                choices. The pairing of Han Quokka and Leebit reflects a bond built on trust, understanding, and
+                emotional
+                balance. This card highlights the importance of relationships that encourage growth, honesty, and mutual
+                respect. When The Lovers appear, it may signal a deepening connection or a decision that must align with
+                your true values. By choosing authenticity and trust, you strengthen the relationships that matter most.
+              </p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Love, harmony, partnership, emotional
+                connection, meaningful choices.</p>
+            </article>
+
+            <article class="meaning-section" id="chariot">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">VII</span> — The Chariot
+                  <span class="skzoo">Dwaekki</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Chariot represents determination, focus, and forward
+                momentum. Dwaekki’s strong and driven energy reflects the courage required to push forward despite
+                obstacles. This card encourages you to stay focused on your goals and maintain control over competing
+                forces or distractions. When The Chariot appears, it often suggests that success will come through
+                persistence and confidence in your abilities. By maintaining discipline and determination, you can move
+                closer to victory.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Determination, ambition, focus,
+                perseverance, forward progress.</p>
+            </article>
+
+            <article class="meaning-section" id="strength">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">VIII</span> — Strength
+                  <span class="skzoo">BbokAri & Dwaekki</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>Strength represents compassion, patience, and quiet inner
+                courage. The image of BbokAri gently calming Dwaekki reflects how kindness and understanding can be more
+                powerful than force. This card reminds you that true strength often comes from emotional balance and
+                empathy. When Strength appears, it may suggest approaching challenges with patience rather than
+                aggression. By staying calm and compassionate, you can transform difficult situations into opportunities
+                for growth.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Inner strength, compassion, patience,
+                emotional balance, resilience.</p>
+            </article>
+
+            <article class="meaning-section" id="hermit">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">IX</span> — The Hermit
+                  <span class="skzoo">FoxI.Ny</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Hermit represents reflection, wisdom, and the search for
+                deeper understanding. FoxI.Ny’s thoughtful and introspective nature mirrors the quiet journey of looking
+                inward for guidance. This card may appear when you need time alone to think, reflect, and reconnect with
+                your inner truth. It encourages stepping away from noise and distractions so you can see your path more
+                clearly. Through reflection and self-awareness, you gain the wisdom needed to move forward.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Reflection, wisdom, solitude,
+                introspection, inner guidance.</p>
+            </article>
+
+            <article class="meaning-section" id="wheel-of-fortune">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">X</span> — Wheel of Fortune
+                  <span class="skzoo">OT8</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Wheel of Fortune represents change, cycles, and the
+                unpredictable flow of life. With all SKZOO characters present, this card reflects how life’s journey
+                involves many different experiences and influences. It reminds you that circumstances can shift
+                suddenly,
+                bringing new opportunities or lessons. When this card appears, it may suggest that a turning point is
+                approaching. Embracing change with adaptability and optimism can lead you toward growth and new
+                possibilities.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Change, cycles, destiny, opportunity,
+                turning points.</p>
+            </article>
+
+            <article class="meaning-section" id="justice">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XI</span> — Justice
+                  <span class="skzoo">Leebit</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>Justice represents fairness, truth, and responsibility.
+                Leebit’s calm and balanced presence reflects the importance of making decisions with clarity and
+                integrity. This card encourages you to consider all sides of a situation before acting. When Justice
+                appears, it may suggest that honesty and accountability will lead to the best outcome. By choosing
+                fairness and truth, you bring balance into your life and relationships.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Fairness, truth, balance,
+                accountability,
+                clarity.</p>
+            </article>
+
+            <article class="meaning-section" id="hanged-man">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XII</span> — The Hanged Man
+                  <span class="skzoo">Wolf Chan</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Hanged Man represents surrender, patience, and seeing
+                things from a new perspective. Like Wolf Chan’s thoughtful leadership, this card reminds you that
+                sometimes progress requires stepping back rather than pushing forward. It encourages you to pause and
+                reconsider your approach to a situation. When The Hanged Man appears, it may suggest that a shift in
+                perspective will reveal new insight or understanding. By letting go of control, you create space for
+                clarity and growth.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Perspective, patience, surrender,
+                reflection, new understanding.</p>
+            </article>
+
+            <article class="meaning-section" id="death">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XIII</span> — Death
+                  <span class="skzoo">Jiniret</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>Death represents transformation, endings, and powerful
+                renewal. Jiniret’s mysterious presence reflects the quiet yet profound changes that shape our lives.
+                This
+                card reminds us that letting go of the old creates space for something new to emerge. When Death
+                appears,
+                it may signal the closing of a chapter or the beginning of a deep transformation. Though change can feel
+                uncomfortable, it often leads to growth, healing, and new opportunities.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Transformation, endings, renewal,
+                release, powerful change.</p>
+            </article>
+
+            <article class="meaning-section" id="temperance">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XIV</span> — Temperance
+                  <span class="skzoo">FoxI.Ny & PuppyM</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>Temperance represents harmony, balance, and cooperation. The
+                partnership of FoxI.Ny and PuppyM reflects how different strengths can blend together to create
+                something
+                stable and peaceful. This card encourages patience and moderation when dealing with challenges or
+                decisions. When Temperance appears, it suggests that balance between emotions, actions, and perspectives
+                will lead to better outcomes. By practicing calmness and understanding, you create harmony within
+                yourself
+                and with others.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Balance, patience, harmony,
+                cooperation,
+                moderation.</p>
+            </article>
+
+            <article class="meaning-section" id="devil">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XV</span> — The Devil
+                  <span class="skzoo">Han Quokka</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Devil represents temptation, attachment, and patterns
+                that
+                may limit your freedom. Han Quokka’s playful energy reminds us that sometimes the things that seem
+                harmless or entertaining can become distractions. This card encourages you to examine habits, fears, or
+                influences that may be holding you back. When The Devil appears, it invites you to recognize these
+                patterns and reclaim control over your choices. Awareness is the first step toward breaking free and
+                rediscovering your independence.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Temptation, awareness, breaking
+                unhealthy
+                patterns, reclaiming personal power.</p>
+            </article>
+
+            <article class="meaning-section" id="tower">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XVI</span> — The Tower
+                  <span class="skzoo">OT8</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Tower represents sudden change that disrupts what once
+                felt stable. With multiple SKZOO characters present, the card reflects how unexpected events can shake
+                the
+                foundations of familiar situations. Although these moments can feel intense or overwhelming, they often
+                reveal truths that were hidden before. When The Tower appears, it signals that something in your life
+                may
+                need to collapse in order for something stronger to be built. Even in chaos, there is an opportunity for
+                clarity and renewal.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Sudden change, awakening, disruption,
+                revelation, rebuilding.</p>
+            </article>
+
+            <article class="meaning-section" id="star">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XVII</span> — The Star
+                  <span class="skzoo">Stay</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Star represents hope, healing, and renewed inspiration.
+                Stay SKZOO symbolizes the supportive energy of community and the light that guides us forward. This card
+                often appears after challenging experiences, reminding you that hope and healing are always possible. It
+                encourages you to believe in brighter possibilities and trust that the future holds new opportunities.
+                Like a guiding star in the night sky, hope can lead you back toward peace and inspiration.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Hope, healing, inspiration, renewal,
+                faith in the future.</p>
+            </article>
+
+            <article class="meaning-section" id="moon">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XVIII</span> — The Moon
+                  <span class="skzoo">FoxI.Ny</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Moon represents uncertainty, dreams, and the mysteries
+                of
+                the subconscious. FoxI.Ny’s mysterious and thoughtful energy reflects the feeling of navigating through
+                emotional or unclear situations. This card encourages you to trust your intuition when the path ahead
+                seems uncertain. Not everything is meant to be understood immediately, and some answers reveal
+                themselves
+                with time. The Moon reminds you to move gently through confusion and listen closely to your inner
+                guidance.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Intuition, mystery, dreams, emotional
+                depth, navigating uncertainty.</p>
+            </article>
+
+            <article class="meaning-section" id="sun">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XIX</span> — The Sun
+                  <span class="skzoo">BbokAri</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Sun represents joy, clarity, and positive energy.
+                BbokAri’s cheerful spirit reflects the warmth and happiness that this card brings. It suggests a time of
+                success, confidence, and renewed optimism. When The Sun appears, it encourages you to celebrate
+                achievements and appreciate the brightness in your life. Sharing your joy and positivity with others can
+                create powerful moments of connection and happiness.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Joy, success, positivity, vitality,
+                clarity.</p>
+            </article>
+
+            <article class="meaning-section" id="judgement">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XX</span> — Judgement
+                  <span class="skzoo">OT8</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>Judgement represents awakening, reflection, and the
+                realization of how past experiences shape the present. With all SKZOO characters present, this card
+                reflects collective growth and shared understanding. It encourages you to reflect honestly on your
+                journey
+                and recognize the lessons you have learned. When Judgement appears, it may signal a moment of
+                transformation where you are ready to move forward with new awareness. By embracing self-reflection and
+                forgiveness, you open the door to a fresh chapter.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Awakening, reflection, transformation,
+                renewal, self-realization.</p>
+            </article>
+
+            <article class="meaning-section" id="world">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <span class="card-number">XXI</span> — The World
+                  <span class="skzoo">OT8</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The World represents completion, fulfillment, and the
+                celebration of a journey coming full circle. With all SKZOO characters united, this card reflects the
+                harmony that comes from growth, teamwork, and shared experiences. It suggests that you have reached an
+                important milestone or achieved something meaningful. When The World appears, it encourages you to
+                recognize how far you have come and appreciate the lessons learned along the way. This moment of
+                completion also prepares you for the beginning of a new journey.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Completion, fulfillment, harmony,
+                achievement, wholeness.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="special-cards">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Special Cards</h2>
+            <p>Additional unit-inspired cards that reflect creation, performance, and emotional expression within the
+              SKZOO Tarot deck.</p>
+          </div>
+          <div class="meanings-wrap">
+            <article class="meaning-section" id="creator">
+              <div class="card-head">
+                <h3 class="card-title">
+                  Special — The Creator
+                  <span class="skzoo">3RACHA</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Creator represents the spark of inspiration and the
+                courage to turn ideas into something real. It reminds us that every project, dream, or path begins with
+                imagination, but it only becomes meaningful through effort, persistence, and collaboration. This card
+                encourages you to trust your creative instincts and bring your ideas to life, even if they feel
+                imperfect
+                at first. When The Creator appears, it suggests that you are in a powerful moment for starting something
+                new, building something meaningful, or expressing your unique voice. Your ideas have value, and the
+                world
+                benefits when you share them.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Inspiration, creativity, innovation,
+                collaboration, bringing ideas into reality.</p>
+            </article>
+
+            <article class="meaning-section" id="performer">
+              <div class="card-head">
+                <h3 class="card-title">
+                  Special — The Performer
+                  <span class="skzoo">DANCERACHA</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Performer represents confidence, expression, and the
+                courage to step into the spotlight. It reflects the moment when preparation meets opportunity and you
+                are
+                called to show your talents, passions, or true self to the world. This card encourages you to embrace
+                movement, joy, and self-expression without fear of judgment. When The Performer appears, it often
+                signals
+                a time to trust your abilities, share your energy with others, and allow yourself to shine. Your
+                presence
+                and authenticity can inspire those around you.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Confidence, performance,
+                self-expression,
+                passion, sharing your energy with the world.</p>
+            </article>
+
+            <article class="meaning-section" id="voice">
+              <div class="card-head">
+                <h3 class="card-title">
+                  Special — The Voice
+                  <span class="skzoo">VOCALRACHA</span>
+                </h3>
+              </div>
+              <p><span class="label">Card meaning</span><br>The Voice represents emotional expression, honesty, and the
+                power of words and sound to connect people. It reminds us that our voice carries our truth, whether
+                through speaking, singing, or sharing our thoughts and feelings openly. When this card appears, it
+                encourages you to express yourself clearly and authentically rather than holding your feelings inside.
+                It
+                may also suggest that your message, perspective, or creativity has the power to move others and create
+                meaningful connection. The Voice invites you to trust that your words matter and that communication can
+                bring healing, understanding, and unity.</p>
+              <p class="energy"><span class="label">Energy of the card</span><br>Expression, emotional honesty,
+                communication, connection, and the power of sharing your truth.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
       <div class="container">
-        <div class="section-heading">
-          <h2>Major Arcana</h2>
-          <p>Current concept list for the Rider–Waite-inspired Major Arcana cards in the SKZOO Tarot deck.</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="number">0</div><h3>The Fool</h3><div class="skzoo">BbokAri</div><p>A leap of faith, new beginnings, and trusting the journey with an open heart.</p><div class="energy"><strong>Energy:</strong> New beginnings, optimism, curiosity, trust in the journey, embracing adventure.</div></article>
-          <article class="card"><div class="number">I</div><h3>The Magician</h3><div class="skzoo">Wolf Chan</div><p>Using your talents with focus and intention to bring an idea into reality.</p><div class="energy"><strong>Energy:</strong> Inspiration, creativity, innovation, collaboration, bringing ideas into reality.</div></article>
-          <article class="card"><div class="number">II</div><h3>The High Priestess</h3><div class="skzoo">Jiniret</div><p>Listening to intuition, trusting inner knowledge, and pausing before acting.</p><div class="energy"><strong>Energy:</strong> Intuition, inner wisdom, reflection, emotional awareness, hidden knowledge.</div></article>
-          <article class="card"><div class="number">III</div><h3>The Empress</h3><div class="skzoo">Han Quokka</div><p>Nurturing growth, creativity, comfort, and the things that matter most.</p><div class="energy"><strong>Energy:</strong> Creativity, nurturing, abundance, emotional warmth, growth.</div></article>
-          <article class="card"><div class="number">IV</div><h3>The Emperor</h3><div class="skzoo">Dwaekki</div><p>Structure, leadership, protection, and building strong foundations.</p><div class="energy"><strong>Energy:</strong> Leadership, stability, discipline, responsibility, strong foundations.</div></article>
-          <article class="card"><div class="number">V</div><h3>The Hierophant</h3><div class="skzoo">PuppyM</div><p>Learning from tradition, trusted guidance, and shared values.</p><div class="energy"><strong>Energy:</strong> Wisdom, tradition, learning, mentorship, shared values.</div></article>
-          <article class="card"><div class="number">VI</div><h3>The Lovers</h3><div class="skzoo">Han Quokka + Leebit</div><p>Meaningful bonds, heartfelt choices, and emotional alignment.</p><div class="energy"><strong>Energy:</strong> Connection, harmony, partnership, meaningful choices, emotional alignment.</div></article>
-          <article class="card"><div class="number">VII</div><h3>The Chariot</h3><div class="skzoo">Dwaekki</div><p>Momentum, confidence, and determined forward motion through challenge.</p><div class="energy"><strong>Energy:</strong> Determination, ambition, focus, perseverance, personal victory.</div></article>
-          <article class="card"><div class="number">VIII</div><h3>Strength</h3><div class="skzoo">BbokAri calming Dwaekki</div><p>Gentle courage, emotional control, and compassion that steadies intensity.</p><div class="energy"><strong>Energy:</strong> Inner strength, compassion, patience, resilience, emotional balance.</div></article>
-          <article class="card"><div class="number">IX</div><h3>The Hermit</h3><div class="skzoo">FoxI.Ny</div><p>Quiet reflection, inner guidance, and wisdom found in solitude.</p><div class="energy"><strong>Energy:</strong> Introspection, wisdom, reflection, personal insight, guidance within.</div></article>
-          <article class="card"><div class="number">X</div><h3>Wheel of Fortune</h3><div class="skzoo">All SKZOO</div><p>Cycles turning, fate shifting, and life opening to change and opportunity.</p><div class="energy"><strong>Energy:</strong> Change, destiny, cycles, opportunity, turning points.</div></article>
-          <article class="card"><div class="number">XI</div><h3>Justice</h3><div class="skzoo">Leebit</div><p>Truth, fairness, accountability, and choices made with clarity.</p><div class="energy"><strong>Energy:</strong> Fairness, truth, balance, accountability, clear decisions.</div></article>
-          <article class="card"><div class="number">XII</div><h3>The Hanged Man</h3><div class="skzoo">Wolf Chan</div><p>A pause for perspective, surrender, and insight through stillness.</p><div class="energy"><strong>Energy:</strong> Perspective, surrender, patience, reflection, letting go.</div></article>
-          <article class="card"><div class="number">XIII</div><h3>Death</h3><div class="skzoo">Jiniret</div><p>Transformation, endings, release, and the beginning that follows change.</p><div class="energy"><strong>Energy:</strong> Transformation, endings, renewal, release, powerful change.</div></article>
-          <article class="card"><div class="number">XIV</div><h3>Temperance</h3><div class="skzoo">FoxI.Ny + PuppyM</div><p>Balance, patience, and the peaceful blending of different strengths.</p><div class="energy"><strong>Energy:</strong> Balance, moderation, cooperation, patience, harmony.</div></article>
-          <article class="card"><div class="number">XV</div><h3>The Devil</h3><div class="skzoo">Han Quokka</div><p>Recognizing attachment, temptation, or patterns that keep you stuck.</p><div class="energy"><strong>Energy:</strong> Awareness, breaking habits, self-reflection, reclaiming personal power.</div></article>
-          <article class="card"><div class="number">XVI</div><h3>The Tower</h3><div class="skzoo">Multiple SKZOO</div><p>Sudden change, truth revealed, and rebuilding after disruption.</p><div class="energy"><strong>Energy:</strong> Sudden change, awakening, disruption, revelation, rebuilding.</div></article>
-          <article class="card"><div class="number">XVII</div><h3>The Star</h3><div class="skzoo">Stay SKZOO</div><p>Hope, healing, inspiration, and a gentle return of faith.</p><div class="energy"><strong>Energy:</strong> Hope, healing, inspiration, renewal, guidance.</div></article>
-          <article class="card"><div class="number">XVIII</div><h3>The Moon</h3><div class="skzoo">FoxI.Ny</div><p>Uncertainty, intuition, dreams, and trusting what you feel beneath the surface.</p><div class="energy"><strong>Energy:</strong> Intuition, mystery, emotional awareness, uncertainty, inner guidance.</div></article>
-          <article class="card"><div class="number">XIX</div><h3>The Sun</h3><div class="skzoo">BbokAri</div><p>Joy, warmth, success, and the clarity that follows darkness.</p><div class="energy"><strong>Energy:</strong> Joy, success, positivity, vitality, clarity.</div></article>
-          <article class="card"><div class="number">XX</div><h3>Judgement</h3><div class="skzoo">All SKZOO</div><p>Awakening, reflection, life review, and answering a deeper call.</p><div class="energy"><strong>Energy:</strong> Awakening, reflection, transformation, renewal, self-realization.</div></article>
-          <article class="card"><div class="number">XXI</div><h3>The World</h3><div class="skzoo">All SKZOO</div><p>Completion, fulfillment, and celebrating how far your journey has taken you.</p><div class="energy"><strong>Energy:</strong> Completion, fulfillment, harmony, success, wholeness.</div></article>
-        </div>
+        <strong style="color: var(--gold-soft);">Stray Kids SKZOO Tarot</strong>
+        <p class="note">Fanmade concept site for a custom tarot deck inspired by Rider–Waite symbolism and SKZOO
+          character
+          assignments.</p>
       </div>
-    </section>
-
-    <section id="special-cards">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Special Cards</h2>
-          <p>Extra concept cards based on Stray Kids units.</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="number">Special</div><h3>3RACHA — The Creator</h3><div class="skzoo">Production / vision / invention</div><p>A card of bold ideas, creative confidence, and turning imagination into something real.</p><div class="energy"><strong>Energy:</strong> Inspiration, creativity, innovation, collaboration, bringing ideas into reality.</div></article>
-          <article class="card"><div class="number">Special</div><h3>DANCERACHA — The Performer</h3><div class="skzoo">Movement / charisma / expression</div><p>A card of passion in motion, stage presence, confidence, and artistic self-expression.</p><div class="energy"><strong>Energy:</strong> Confidence, performance, self-expression, passion, creative movement.</div></article>
-          <article class="card"><div class="number">Special</div><h3>VOCALRACHA — The Voice</h3><div class="skzoo">Emotion / honesty / communication</div><p>A card of truth, connection, and expressing your heart clearly and sincerely.</p><div class="energy"><strong>Energy:</strong> Communication, authenticity, emotional expression, connection, truth.</div></article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <strong>Stray Kids SKZOO Tarot</strong>
-      <p class="note">Fanmade concept site for a custom tarot deck inspired by Rider–Waite symbolism and SKZOO character assignments.</p>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </body>
+
 </html>
